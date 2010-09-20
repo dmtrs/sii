@@ -61,6 +61,11 @@ class SiiModule extends CWebModule
     public function processRequest()
     {
         //NOTE: remove this method to see what's going on
-        $this->_runner->run($_SERVER['argv']);     
+        // /home/dmtrsslvdr/public_html/yii3/framework/cli/commands/ShellCommand.php
+	//If i try to run this i get endless looop in the above
+	$this->_runner->run(array("./yiic","shell","../../index.php"));
+        //what i think really must happen is 
+        // ShellCommand::runShell()
+       
     }
 }
